@@ -2,25 +2,45 @@
 <html>
 <head>
     <style>
-        #remoteVideo video{
-            width: 10px;
-            height: 10px;
+
+        #localVideo{
+            width: 100px;
+            height: 100px;
         }
+
     </style>
     <script src="http://simplewebrtc.com/latest.js"></script>
+    <script src='jquery-1.11.1.min.js'></script>
 </head>
 
 <body>
+    <input type="text" placeholder="input roomName " id="roomName">
+    <input type="button" value="name it" id="nameTheRoom">
+    
 
-<div id="localVideo" ></div>
-<div id="remoteVideo"></div>
+    <div><video id="localVideo"></video></div>
+    <p>local</p>
+
+    <div id="remoteVideo"></div>
+    <p>remote</p>
 <!--
 <div id="localVideo" muted></div>
 !-->
 
 
+
+
 <script>
-    var unique = "xiao";
+    //var unique = "xiao";
+    var unique;
+    $(document).ready(function(){
+        $('#nameTheRoom').click(function(){
+            unique = $('#roomName').val()
+
+            
+        })
+    })
+    
     var webrtc = new SimpleWebRTC({
         localVideoEl: 'localVideo',
         remoteVideosEl: 'remoteVideo',
@@ -33,6 +53,8 @@
         webrtc.joinRoom(unique + 'My room name');
         //webrtc.joinRoom('My room name');
     });
+
+
 </script>
 
 </body>
