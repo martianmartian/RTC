@@ -1,3 +1,16 @@
+#localVideo{
+    width: 100px;
+    height: 100px;
+}
+
+
+thead {color:green;}
+tbody {color:blue;}
+tfoot {color:red;}
+table, th, td {
+    border: 1px solid black;
+}
+
 
 
 .selected {

@@ -1,62 +1,27 @@
+
+
+
+
+<script src="latest.js"></script>
+<script type="text/javascript" src="https://cdn.firebase.com/js/client/1.1.2/firebase.js"></script>
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+
+<script type="text/javascript" src="front.js"></script>
+<script type="text/javascript" src="video.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="front.css">
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        #localVideo{
-            width: 100px;
-            height: 100px;
-        }
-    </style>
-    <style>
-        thead {color:green;}
-        tbody {color:blue;}
-        tfoot {color:red;}
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
-    <script src="http://simplewebrtc.com/latest.js"></script>
-    <script src='jquery-1.11.1.min.js'></script>
-
-
-    <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
-    <script src='jquery-1.11.1.min.js'></script>
-    <script type="text/javascript" src="select.js"></script>
-    <script type="text/javascript" src="push_fire.js"></script>
-    <script type="text/javascript" src="load_present.js"></script>
-    <script type="text/javascript" src="load_lesson.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="select.css">
-
-
-    <script>
-        $('#localTag').text("local")
-        $('#remoteTag').text("remote")
-
-        var unique;
-        $(document).ready(function(){
-            $('#nameTheRoom').click(function(){
-                unique = $('#roomName').val()
-
-                var webrtc = new SimpleWebRTC({
-                localVideoEl: 'localVideo',
-                remoteVideosEl: 'remoteVideo',
-                autoRequestMedia: true
-                //url:"http://localhost:2013"
-                });
-
-                webrtc.on('readyToCall', function () {
-                    webrtc.joinRoom(unique + 'My room name');
-                    //webrtc.joinRoom('My room name');
-                });
-            })
-        })
-
-    </script>
-
+	<title></title>
 </head>
-
 <body>
+
 
 <div id="webRTC_zone">
     <input type="text" placeholder="input roomName " id="roomName">
@@ -74,88 +39,38 @@
 
 
 
+
+
 <div id="firebase_zone">
 
-  <input type="button" value="load bank" id="loadBank">
+	<script type="text/javascript">
+		var a=function a () {
+			//alert("button attributes induced function. pretty cool")
+		}
+	</script>
+
+	<button type="button" id="loadBank" onclick="a()" >load bank</button>
+	<button type="button" id="selected" >selected lesson</button>
+	<br>
+	<button type="button" id="startLesson">start lesson</button>
+	<br>
+
+	<div id="">
+	  <table id="tableDiv">
+
+	      <tr>
+	          <th>Words</th>
+	          <th>Phrases</th>
+	          <th>Idioms</th>
+	      </tr>
 
 
-  <div id="tableDiv">
-      <table>
-          <tr>
-              <th>Words</th>
-              <th>Phrases</th>
-              <th>Idioms</th>
-          </tr>
-          <tr>
-              <td class="words">TBD</td>
-              <td class="phrases">TBD</td>
-              <td class="idioms">TBD</td>
-          </tr>
-          <tr>
-              <td class="words">TBD</td>
-              <td class="phrases">TBD</td>
-              <td class="idioms">TBD</td>
-          </tr>
-          <tr>
-              <td class="words">TBD</td>
-              <td class="phrases">TBD</td>
-              <td class="idioms">TBD</td>
-          </tr>
-          <tr>
-              <td class="words">TBD</td>
-              <td class="phrases">TBD</td>
-              <td class="idioms">TBD</td>
-          </tr>
-          <tr>
-              <td class="words">TBD</td>
-              <td class="phrases">TBD</td>
-              <td class="idioms">TBD</td>
-          </tr>
-          <tr>
-              <td class="words">TBD</td>
-              <td class="phrases">TBD</td>
-              <td class="idioms">TBD</td>
-          </tr>
-          <tr>
-              <td class="words">TBD</td>
-              <td class="phrases">TBD</td>
-              <td class="idioms">TBD</td>
-          </tr>
-          <tr>
-              <td class="words">TBD</td>
-              <td class="phrases">TBD</td>
-              <td class="idioms">TBD</td>
-          </tr>
-          <tr>
-              <td class="words">TBD</td>
-              <td class="phrases">TBD</td>
-              <td class="idioms">TBD</td>
-          </tr>
-          <tr>
-              <td class="words">TBD</td>
-              <td class="phrases">TBD</td>
-              <td class="idioms">TBD</td>
-          </tr>
-          <tr>
-              <td class="words">TBD</td>
-              <td class="phrases">TBD</td>
-              <td class="idioms">TBD</td>
-          </tr>
+	  </table>
 
-          <tr>
-              <td colspan=""><input id="words" type="button" value="select"></td>
-              <td colspan=""><input id="phrases" type="button" value="select"></td>
-              <td colspan=""><input id="idioms" type="button" value="select"></td>
-          </tr>
+	</div>
 
 
 
-      </table>
-
-  </div>
-
-
-  <input type="button" value="startLesson" id="startLesson">
 
 
 </div>
@@ -163,10 +78,5 @@
 
 
 
-
-
-
-
 </body>
-
 </html>
