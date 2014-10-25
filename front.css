@@ -1,7 +1,20 @@
 #localVideo{
-    width: 100px;
-    height: 100px;
+    width: 800px;
+    height: 500px;
+    opacity: 0.5
 }
+
+#firebase_zone{
+	position: absolute;
+	top:100px;
+	left: 300px;
+}
+
+
+
+
+
+
 
 
 thead {color:green;}
